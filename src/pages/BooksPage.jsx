@@ -1,5 +1,6 @@
 import { Suspense, useState, useEffect } from "react";
 import { mockFetch } from "../utils/api";
+import { LinkButton } from "../components/LinkButton";
 import { Loader } from "../components/Loader";
 import { ROUTES } from "../constants";
 import {
@@ -55,6 +56,7 @@ export const BooksPage = () => {
                 onChange={(e) => setSearch(e.target.value)}
               />
             </div>
+            <LinkButton to="add" title="Add book" />
             <div className="relative">
               {state === "loading" && <Loader />}
               {books?.map((item) => (
